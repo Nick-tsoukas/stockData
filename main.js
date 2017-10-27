@@ -1,6 +1,7 @@
 var btn = document.getElementById("mySubmit");
 var val = document.getElementById('stock');
 var formStock = document.getElementById('stockForm');
+var listSymbol = document.getElementById('symbol');
 var stockData = {};
 
 formStock.addEventListener('submit', function(e) {
@@ -18,8 +19,14 @@ function getData(stock) {
     })
     .then(function(data) {
       stockData = data;
-      console.log(data);
-      console.log(typeof(data));
+      console.log(stockData);
+      setData(stockData);
       val.value = '';
     });
+}
+
+
+function setData(data) {
+  console.log('in set Data');
+  listSymbol.innerHTML = data["Meta Data"]["2. Symbol"];
 }
