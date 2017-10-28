@@ -2,7 +2,7 @@ var btn = document.getElementById("mySubmit");
 var val = document.getElementById('stock');
 var formStock = document.getElementById('stockForm');
 var listSymbol = document.getElementById('symbol');
-var stockData = [];
+var stockData = {};
 
 formStock.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -18,8 +18,8 @@ function getData(stock) {
       return response.json();
     })
     .then(function(data) {
-      stockData.push(data);
-      console.log(stockData);
+      stockData = data;
+      //console.log(stockData);
       setData(stockData);
       val.value = '';
     });
@@ -27,6 +27,12 @@ function getData(stock) {
 
 
 function setData(data) {
-  console.log('in set Data');
-  listSymbol.innerHTML = data[0]["Meta Data"]["2. Symbol"];
+  var ob = data["Time Series (Daily)"];
+  for (var prop in ob) {
+    if (ob.hasOwnProperty(prop)) {
+      console.log(ob[prop]["1. open"]);
+    }
+
+  }
+  listSymbol.innerHTML = data["Meta Data"]["2. Symbol"];
 }
