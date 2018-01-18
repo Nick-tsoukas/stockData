@@ -1,0 +1,24 @@
+{
+  "name": "stockdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start -s -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nick-tsoukas/stockData.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nick-tsoukas/stockData/issues"
+  },
+  "homepage": "https://github.com/Nick-tsoukas/stockData#readme",
+  "dependencies": {
+    "echarts": "^4.0.1",
+    "frappe-charts": "0.0.8"
+  }
+}
